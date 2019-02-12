@@ -124,12 +124,12 @@ public class MyService extends Service {
             public void run() {
 
                 //шаблон из тестового задания
-                String sablon = "rtt003,356217625371698,-59.4364251,-129.9839853,0023,0014,123,090,20130618,195430,-11,24,60,A,0";
+                String sablon = "-59.4364251,-129.9839853,0023,0014,123,090,20130618,195430,-11,24,60,A,0";
 
                 Random random = new Random();
 
                 try {
-                    socket = new Socket(InetAddress.getByName("srv1.livegpstracks.com"), 3359);
+                    socket = new Socket(InetAddress.getByName("localhost"), 8080);
                     outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
                     outputStreamWriter.write(locationFormatter(locationMain));
                     outputStreamWriter.flush();
@@ -196,7 +196,6 @@ public class MyService extends Service {
         try {
 
              s =//proto
-                    "rtt003," + "356217625371698," +
                             //"longtitude " +
                             location.getLongitude() + "," +
                             //"latitude" +
